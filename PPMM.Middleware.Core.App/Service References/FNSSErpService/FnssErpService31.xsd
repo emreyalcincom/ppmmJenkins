@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:43831/FnssErpService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Enumerations" />
+  <xs:import schemaLocation="http://localhost:43831/FnssErpService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" />
+  <xs:import schemaLocation="http://localhost:43831/FnssErpService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfWorkOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkOrder" nillable="true" type="tns:WorkOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkOrder" nillable="true" type="tns:ArrayOfWorkOrder" />
+  <xs:complexType name="WorkOrder">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q1:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeliveryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationStatuses" nillable="true" type="tns:ArrayOfOperationStatus" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+          <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Enumerations" minOccurs="0" name="StateType" type="q2:WorkStateType" />
+          <xs:element minOccurs="0" name="Work" nillable="true" type="tns:Work" />
+          <xs:element minOccurs="0" name="WorkId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOrder" nillable="true" type="tns:WorkOrder" />
+  <xs:complexType name="ArrayOfOperationStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationStatus" nillable="true" type="tns:OperationStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationStatus" nillable="true" type="tns:ArrayOfOperationStatus" />
+  <xs:complexType name="OperationStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q3:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Operation" nillable="true" type="tns:Operation" />
+          <xs:element minOccurs="0" name="OperationId" type="xs:int" />
+          <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Enumerations" minOccurs="0" name="StateType" type="q4:WorkStateType" />
+          <xs:element minOccurs="0" name="WorkOrder" nillable="true" type="tns:WorkOrder" />
+          <xs:element minOccurs="0" name="WorkOrderId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationStatus" nillable="true" type="tns:OperationStatus" />
+  <xs:complexType name="Operation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q5:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Consumed" nillable="true" type="tns:ArrayOfConsumedMaterial" />
+          <xs:element minOccurs="0" name="Definition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationOrders" nillable="true" type="tns:ArrayOfOperationOrder" />
+          <xs:element minOccurs="0" name="ProcessSpan" type="ser:duration" />
+          <xs:element minOccurs="0" name="Resource" nillable="true" type="tns:Resource" />
+          <xs:element minOccurs="0" name="ResourceId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Shift" nillable="true" type="tns:Shift" />
+          <xs:element minOccurs="0" name="ShiftId" type="xs:int" />
+          <xs:element minOccurs="0" name="Work" nillable="true" type="tns:Work" />
+          <xs:element minOccurs="0" name="WorkId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Operation" nillable="true" type="tns:Operation" />
+  <xs:complexType name="ArrayOfConsumedMaterial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsumedMaterial" nillable="true" type="tns:ConsumedMaterial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsumedMaterial" nillable="true" type="tns:ArrayOfConsumedMaterial" />
+  <xs:complexType name="ConsumedMaterial">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q6:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Material" nillable="true" type="tns:Material" />
+          <xs:element minOccurs="0" name="MaterialId" type="xs:int" />
+          <xs:element minOccurs="0" name="QuantityId" type="xs:int" />
+          <xs:element minOccurs="0" name="QuantityType" nillable="true" type="tns:Quantity" />
+          <xs:element minOccurs="0" name="QuantityValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsumedMaterial" nillable="true" type="tns:ConsumedMaterial" />
+  <xs:complexType name="Material">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q7:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Material" nillable="true" type="tns:Material" />
+  <xs:complexType name="Quantity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q8:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Quantity" nillable="true" type="tns:Quantity" />
+  <xs:complexType name="ArrayOfOperationOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationOrder" nillable="true" type="tns:OperationOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationOrder" nillable="true" type="tns:ArrayOfOperationOrder" />
+  <xs:complexType name="OperationOrder">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q9:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Operation" nillable="true" type="tns:Operation" />
+          <xs:element minOccurs="0" name="OperationId" type="xs:int" />
+          <xs:element minOccurs="0" name="Order" type="xs:int" />
+          <xs:element minOccurs="0" name="Work" nillable="true" type="tns:Work" />
+          <xs:element minOccurs="0" name="WorkId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationOrder" nillable="true" type="tns:OperationOrder" />
+  <xs:complexType name="Work">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q10:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationOrders" nillable="true" type="tns:ArrayOfOperationOrder" />
+          <xs:element minOccurs="0" name="Operations" nillable="true" type="tns:ArrayOfOperation" />
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+          <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkOrders" nillable="true" type="tns:ArrayOfWorkOrder" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Work" nillable="true" type="tns:Work" />
+  <xs:complexType name="ArrayOfOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operation" nillable="true" type="tns:Operation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperation" nillable="true" type="tns:ArrayOfOperation" />
+  <xs:complexType name="Product">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q11:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductGenus" nillable="true" type="tns:ProductGenus" />
+          <xs:element minOccurs="0" name="ProductGenusId" type="xs:int" />
+          <xs:element minOccurs="0" name="StockCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ProductGenus">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q12:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parent" nillable="true" type="tns:ProductGenus" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductGenus" nillable="true" type="tns:ProductGenus" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Resource">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q13:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResourceDefinitions" nillable="true" type="tns:ArrayOfResourceDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Resource" nillable="true" type="tns:Resource" />
+  <xs:complexType name="ArrayOfResourceDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceDefinition" nillable="true" type="tns:ResourceDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceDefinition" nillable="true" type="tns:ArrayOfResourceDefinition" />
+  <xs:complexType name="ResourceDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q14:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductionCapacity" type="xs:double" />
+          <xs:element minOccurs="0" name="ResourceId" type="xs:int" />
+          <xs:element minOccurs="0" name="ResourceType" nillable="true" type="tns:Resource" />
+          <xs:element minOccurs="0" name="ResourceValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResourceDefinition" nillable="true" type="tns:ResourceDefinition" />
+  <xs:complexType name="Shift">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Bases" base="q15:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Enumerations" minOccurs="0" name="StateType" type="q16:ShiftStateType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Shift" nillable="true" type="tns:Shift" />
+</xs:schema>

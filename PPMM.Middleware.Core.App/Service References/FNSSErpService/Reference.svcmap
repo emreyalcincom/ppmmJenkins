@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c9e75c0b-e2ae-463c-bc71-017febff9975" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="PPMM.Data.Model" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:43831/FnssErpService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FnssErpService.wsdl" MetadataType="Wsdl" ID="e4d6d888-b6d9-44e8-b7fe-a5864632947f" SourceId="1" SourceUrl="http://localhost:43831/FnssErpService.svc?wsdl" />
+    <MetadataFile FileName="FnssErpService3.xsd" MetadataType="Schema" ID="7effb53a-e194-4876-b199-7f2a0e573caf" SourceId="1" SourceUrl="http://localhost:43831/FnssErpService.svc?xsd=xsd4" />
+    <MetadataFile FileName="FnssErpService.xsd" MetadataType="Schema" ID="e6ba6b0d-24c7-4368-828d-ae637676c009" SourceId="1" SourceUrl="http://localhost:43831/FnssErpService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FnssErpService31.xsd" MetadataType="Schema" ID="af7bb496-76e2-4061-8388-06db59569071" SourceId="1" SourceUrl="http://localhost:43831/FnssErpService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FnssErpService2.xsd" MetadataType="Schema" ID="27c398c5-afc1-4c53-9fe9-b4b3ebdc05e2" SourceId="1" SourceUrl="http://localhost:43831/FnssErpService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FnssErpService1.xsd" MetadataType="Schema" ID="dba4ff5f-63b5-4343-bc11-2f8eecbc31f1" SourceId="1" SourceUrl="http://localhost:43831/FnssErpService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FnssErpService.disco" MetadataType="Disco" ID="777b7ec9-34e1-44b0-a6a8-f8ad08af3a04" SourceId="1" SourceUrl="http://localhost:43831/FnssErpService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

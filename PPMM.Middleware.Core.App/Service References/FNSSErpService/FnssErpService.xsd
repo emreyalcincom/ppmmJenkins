@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PPMM.Data.Model.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ShiftStateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Off" />
+      <xs:enumeration value="On" />
+      <xs:enumeration value="Overload" />
+      <xs:enumeration value="Started" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShiftStateType" nillable="true" type="tns:ShiftStateType" />
+  <xs:simpleType name="WorkStateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Waiting" />
+      <xs:enumeration value="Finished" />
+      <xs:enumeration value="InWork" />
+      <xs:enumeration value="SystemStop" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkStateType" nillable="true" type="tns:WorkStateType" />
+</xs:schema>
